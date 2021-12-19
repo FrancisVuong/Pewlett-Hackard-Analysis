@@ -1,3 +1,4 @@
+-- Create Tables for Challenge 
 REATE TABLE titles_emp (
      emp_no INT NOT NULL,
      title VARCHAR(40) NOT NULL,
@@ -15,13 +16,15 @@ CREATE TABLE employees (
      PRIMARY KEY (emp_no)
 );
 
-SELECT emp_no, first_name, last_name, birth_date
+-- Retrieve emp_no, first_name, last_name
+SELECT emp_no, first_name, last_name
 FROM employees
 
+-- Retrieve title, from_date and to_date
 SELECT emp_no, title, from_date, to_date
 FROM titles_emp
 
-
+-- Create new table using INTO clause and join tables
 SELECT e.emp_no, first_name, last_name, birth_date, title, from_date, to_date
 INTO master
 FROM titles_emp
@@ -32,7 +35,7 @@ ORDER BY e.emp_no
 
 SELECT emp_no, first_name, last_name, title, from_date, to_date FROM master
 
--- Use Dictinct with Orderby to remove duplicate rows
+-- Clean the data
 SELECT DISTINCT ON (emp_no) emp_no, first_name, last_name, title, from_date, to_date
 INTO unique_titles
 FROM master
