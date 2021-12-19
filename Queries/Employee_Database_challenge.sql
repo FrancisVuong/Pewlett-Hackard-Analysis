@@ -53,6 +53,8 @@ Select * FROM master
 
 SELECT * FROM unique_titles
 
+-- Deliverable 2, Create the Mentorship Eligibility Table
+
 SELECT DISTINCT ON (e.emp_no) e.emp_no, e.first_name, e.last_name, e.birth_date, ttl.from_date, ttl.to_date, ttl.title
 INTO mentorship
 FROM employees AS e
