@@ -1,5 +1,5 @@
 -- Create Tables for Challenge 
-REATE TABLE titles_emp (
+CREATE TABLE titles_emp (
      emp_no INT NOT NULL,
      title VARCHAR(40) NOT NULL,
      from_date DATE NOT NULL,
